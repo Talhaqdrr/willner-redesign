@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Willner Properties | King of Prussia, PA Real Estate</title>
+<meta name="description" content="Willner Properties is a King of Prussia, PA based mixed use real estate development, management and leasing company offering retail, office, medical and residential space.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Brand: the site's black / white / charcoal, with a champagne accent */
+  --ink:#0b0c0d;
+  --char:#33373d;
+  --char-2:#1a1c1f;
+  --paper:#f4f2ee;
+  --white:#fff;
+  --muted:#5d6168;
+  --muted-d:#b9bcc2;
+  --line:#dcd8d0;
+  --line-d:rgba(255,255,255,.14);
+  --gold:#c8a96a;          /* accent on dark */
+  --gold-ink:#7a5c22;      /* accent text on light (6.1:1) */
+  --focus:#ffcf5c;
+  --radius:20px;
+  --wrap:1280px;
+  --gutter:clamp(16px,4vw,48px);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:90px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.02;letter-spacing:-.03em;margin:0 0 .5em}
+h2{font-size:clamp(2.2rem,5vw,4.2rem);font-weight:800}
+h3{font-size:1.4rem;font-weight:600;letter-spacing:-.01em;line-height:1.2}
+p{margin:0 0 1em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gutter)}
+section{padding:clamp(72px,10vw,140px) 0}
+.kicker{display:inline-flex;align-items:center;gap:12px;font-size:.85rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-ink);margin-bottom:18px}
+.kicker::before{content:"";height:1.5px;width:40px;background:currentColor}
+.dark .kicker{color:var(--gold)}
+.lede{font-size:clamp(1.15rem,1.6vw,1.35rem);color:var(--muted);max-width:60ch}
+.dark{background:var(--ink);color:#fff}
+.dark .lede{color:var(--muted-d)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:16px;top:-80px;z-index:200;background:#fff;color:var(--ink);padding:12px 18px;border-radius:10px;font-weight:700}
+.skip:focus{top:16px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.6em;min-height:54px;padding:0 26px;border-radius:999px;font-weight:600;font-size:1rem;text-decoration:none;border:1.5px solid transparent;transition:background .3s,color .3s,transform .3s var(--ease),border-color .3s;cursor:pointer;position:relative;overflow:hidden;isolation:isolate}
+.btn svg{width:20px;height:20px;flex:none;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-gold{background:var(--gold);color:var(--ink)}
+.btn-gold::before{content:"";position:absolute;inset:0;background:#fff;transform:translateY(101%);transition:transform .45s var(--ease);z-index:-1;border-radius:inherit}
+.btn-gold:hover::before{transform:none}
+.btn-line{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-line:hover{background:#fff;color:var(--ink)}
+.btn-ink{background:var(--ink);color:#fff}
+.btn-ink:hover{background:var(--char)}
+
+/* Progress + pause */
+.progress{position:fixed;inset:0 0 auto 0;height:3px;z-index:150;background:var(--gold);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+.motion-toggle{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;min-width:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line-d);background:transparent;color:#fff;font:600 .9rem var(--body);cursor:pointer}
+.motion-toggle:hover{border-color:#fff}
+.motion-toggle svg{width:14px;height:14px}
+.motion-toggle .play,.paused .motion-toggle .pause{display:none}
+.paused .motion-toggle .play{display:inline}
+.paused *,.paused *::before,.paused *::after{animation-play-state:paused!important}
+
+/* Header */
+.site-header{position:fixed;inset:0 0 auto 0;z-index:100;transition:background .4s,backdrop-filter .4s,transform .4s var(--ease)}
+.site-header.solid{background:rgba(11,12,13,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.site-header.hide{transform:translateY(-100%)}
+.site-header.menu-open{background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;transform:none}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:84px}
+.brand img{height:54px;width:auto}
+.nav ul{list-style:none;margin:0;padding:0;display:flex;gap:2px;align-items:center}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;color:#fff;text-decoration:none;font-weight:500;font-size:.98rem;position:relative}
+.nav a::after{content:"";position:absolute;left:14px;right:14px;bottom:8px;height:1.5px;background:var(--gold);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.head-right{display:flex;align-items:center;gap:10px}
+.menu-btn{display:none;min-height:48px;padding:0 18px;border-radius:999px;border:1.5px solid rgba(255,255,255,.5);background:transparent;color:#fff;font:600 1rem var(--body);cursor:pointer}
+
+/* Hero */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden;padding:0;background:var(--ink)}
+.slides{position:absolute;inset:0}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s ease}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.18)}
+.slide.on img{animation:kenburns 9s linear forwards}
+.slide:nth-child(even).on img{animation-name:kenburns2}
+@keyframes kenburns{from{transform:scale(1.18) translate(2%,1%)}to{transform:scale(1.04) translate(0,0)}}
+@keyframes kenburns2{from{transform:scale(1.04) translate(-1%,0)}to{transform:scale(1.18) translate(2%,-1%)}}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,12,13,.6) 0%,rgba(11,12,13,0) 65%),linear-gradient(180deg,rgba(11,12,13,.55) 0%,rgba(11,12,13,.2) 35%,rgba(11,12,13,.9) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-bottom:clamp(40px,7vw,90px);padding-top:140px}
+.hero h1{font-size:clamp(3.2rem,11vw,10rem);font-weight:800;letter-spacing:-.045em;line-height:.88;margin:0 0 28px}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ch{display:inline-block;transform:translateY(105%);animation:rise 1s var(--ease) forwards;animation-delay:calc(.3s + var(--i) * .035s)}
+.hero h1 .line:nth-child(2) .ch{color:transparent;-webkit-text-stroke:2px #fff}
+@keyframes rise{to{transform:none}}
+.hero-bottom{display:grid;grid-template-columns:1.3fr auto;gap:28px 48px;align-items:end}
+.hero-bottom p{font-size:clamp(1.05rem,1.5vw,1.3rem);max-width:58ch;color:#e6e6e6;margin:0;opacity:0;animation:fadeUp 1s var(--ease) 1s forwards}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;opacity:0;animation:fadeUp 1s var(--ease) 1.2s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.slide-ui{display:flex;flex-wrap:wrap;align-items:center;gap:4px 18px;margin-top:40px;opacity:0;animation:fadeUp 1s var(--ease) 1.4s forwards}
+.dots{display:flex;gap:8px}
+.dots button{width:44px;height:44px;border:0;background:transparent;padding:0;cursor:pointer;display:grid;place-items:center}
+.dots button span{display:block;width:36px;height:3px;background:rgba(255,255,255,.3);border-radius:2px;overflow:hidden;position:relative}
+.dots button span::after{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.dots button[aria-current="true"] span::after{animation:fill 6s linear forwards}
+@keyframes fill{to{transform:scaleX(1)}}
+.slide-cap{font-size:.95rem;color:#d0d0d0;letter-spacing:.02em}
+.scroll-cue{position:absolute;right:var(--gutter);bottom:clamp(40px,7vw,90px);z-index:2;width:28px;height:46px;border:1.5px solid rgba(255,255,255,.6);border-radius:20px;display:none}
+.scroll-cue::after{content:"";position:absolute;left:50%;top:9px;width:4px;height:8px;margin-left:-2px;border-radius:2px;background:#fff;animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%{opacity:0;transform:translateY(0)}30%{opacity:1}100%{opacity:0;transform:translateY(16px)}}
+
+/* Marquee */
+.marquee{background:var(--gold);color:var(--ink);overflow:hidden;padding:18px 0;border-block:1px solid rgba(0,0,0,.1)}
+.marquee-track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee ul{display:flex;list-style:none;margin:0;padding:0}
+.marquee li{display:flex;align-items:center;gap:28px;padding-right:28px;font-family:var(--display);font-weight:600;font-size:clamp(1.2rem,2.2vw,1.7rem);white-space:nowrap;letter-spacing:-.01em}
+.marquee li::after{content:"✦";font-size:.8em}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* Availabilities / intro */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);align-items:center}
+.wipe{overflow:hidden;border-radius:var(--radius)}
+.wipe img{width:100%;height:100%;object-fit:cover}
+.js .wipe{clip-path:inset(0 100% 0 0 round var(--radius));transition:clip-path 1.3s var(--ease)}
+.js .wipe img{transform:scale(1.25);transition:transform 1.8s var(--ease)}
+.js .wipe.in{clip-path:inset(0 0 0 0 round var(--radius))}
+.js .wipe.in img{transform:scale(1)}
+.intro-media{position:relative;aspect-ratio:4/5}
+.intro-media .wipe{position:absolute;inset:0}
+.badge-spin{position:absolute;right:-28px;bottom:-28px;width:150px;height:150px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center;z-index:2}
+.badge-spin{overflow:hidden}
+.badge-spin svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 18s linear infinite}
+.badge-spin text{font:600 11.5px var(--body);letter-spacing:.28em;fill:#fff;text-transform:uppercase}
+.badge-spin b{font-family:var(--display);font-size:2rem;font-weight:800;color:var(--gold);line-height:1;text-align:center}
+.badge-spin b small{display:block;font:600 .7rem var(--body);letter-spacing:.1em;color:#fff;margin-top:4px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:40px;border-top:1px solid var(--line)}
+.stat{padding:22px 0;border-bottom:1px solid var(--line)}
+.stat:nth-child(odd){padding-right:20px;border-right:1px solid var(--line)}
+.stat:nth-child(even){padding-left:20px}
+.stat b{display:block;font-family:var(--display);font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:800;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.stat span{color:var(--muted);font-size:.98rem}
+
+/* Why us */
+.why{position:relative;overflow:hidden}
+.skyline{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;opacity:.5;pointer-events:none}
+.skyline path{fill:none;stroke:var(--gold);stroke-width:1.5;stroke-linejoin:round}
+.js .skyline path{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 3.2s var(--ease)}
+.js .skyline.in path{stroke-dashoffset:0}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px;position:relative;z-index:1}
+.why-card{border:1px solid var(--line-d);border-radius:var(--radius);padding:34px 30px 30px;background:rgba(255,255,255,.03);backdrop-filter:blur(4px);position:relative;overflow:hidden;transition:border-color .4s,transform .5s var(--ease)}
+.why-card::before{content:"";position:absolute;inset:-1px;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(200,169,106,.22),transparent 45%);opacity:0;transition:opacity .4s;pointer-events:none}
+.why-card:hover{border-color:rgba(200,169,106,.6);transform:translateY(-6px)}
+.why-card:hover::before{opacity:1}
+.why-card .num{font-family:var(--display);font-size:.95rem;color:var(--gold);letter-spacing:.1em}
+.why-card h3{font-size:2rem;font-weight:800;letter-spacing:-.03em;margin:28px 0 14px}
+.why-card p{color:var(--muted-d);margin:0}
+.why-card .ic{width:56px;height:56px;color:var(--gold)}
+.why-card .ic *{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* Properties (horizontal pinned scroll on desktop) */
+.props{padding-bottom:0}
+.props-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:20px 48px;margin-bottom:40px}
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters button{min-height:46px;padding:0 20px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:600 .98rem var(--body);color:var(--ink);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.filters button:hover{border-color:var(--ink)}
+.filters button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.hscroll{position:relative}
+.hs-sticky{padding-bottom:clamp(72px,10vw,140px)}
+.hs-track{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:22px;padding:0 var(--gutter);max-width:var(--wrap);margin:0 auto}
+.hs-on .hs-sticky{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:center;padding-bottom:0}
+.hs-on .hs-track{display:flex;max-width:none;margin:0;will-change:transform;padding-right:30vw}
+.hs-on .prop{flex:0 0 min(420px,32vw)}
+.prop{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--ink);color:#fff;aspect-ratio:4/5;text-decoration:none;display:block;transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .5s var(--ease),opacity .4s}
+.prop.tilting{transition:transform .1s linear}
+.prop img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.prop:hover img{transform:scale(1.08)}
+.prop::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.88) 100%)}
+.prop .meta{position:absolute;left:0;right:0;bottom:0;z-index:1;padding:24px}
+.prop .tag{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.14);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25);padding:6px 12px;border-radius:999px;margin-bottom:14px}
+.prop .tag.res{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.prop h3{font-size:1.5rem;margin:0 0 6px;font-weight:800;letter-spacing:-.02em}
+.prop address{font-style:normal;color:#d8d8d8;font-size:1rem}
+.prop .go{position:absolute;top:20px;right:20px;z-index:1;width:48px;height:48px;border-radius:50%;background:#fff;color:var(--ink);display:grid;place-items:center;transform:scale(.6) rotate(-45deg);opacity:0;transition:transform .5s var(--ease),opacity .4s}
+.prop .go svg{width:20px;height:20px}
+.prop:hover .go,.prop:focus-visible .go{transform:none;opacity:1}
+.prop[hidden]{display:none}
+.hs-count{font-family:var(--display);font-weight:600;color:var(--muted)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(32px,6vw,96px);align-items:start}
+.values{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0}
+.values span{font-family:var(--display);font-weight:600;font-size:1.25rem;padding:10px 20px;border:1.5px solid var(--ink);border-radius:999px}
+.checks{list-style:none;padding:0;margin:0 0 28px}
+.checks li{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+.checks li svg{flex:none;width:22px;height:22px;margin-top:4px;color:var(--gold-ink)}
+.about-quote{background:var(--ink);color:#fff;border-radius:var(--radius);padding:clamp(28px,4vw,44px);position:relative;overflow:hidden}
+.about-quote h3{font-size:1.7rem;font-weight:800}
+.about-quote p{color:var(--muted-d)}
+.about-quote .glow{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(200,169,106,.35),transparent);right:-80px;top:-80px;animation:float 9s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translate(0,0)}50%{transform:translate(-40px,40px)}}
+
+/* Testimonials */
+.quotes{background:var(--char-2)}
+.q-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(32px,6vw,96px);align-items:center}
+.q-stage{position:relative;min-height:340px}
+.q{position:absolute;inset:0;opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease);pointer-events:none}
+.q.on{opacity:1;transform:none;pointer-events:auto;position:relative}
+.q blockquote{margin:0;font-family:var(--display);font-size:clamp(1.35rem,2.3vw,2rem);font-weight:400;line-height:1.35;letter-spacing:-.015em}
+.q blockquote::before{content:"“";display:block;font-size:5rem;line-height:.6;color:var(--gold);margin-bottom:10px}
+.q cite{display:block;margin-top:24px;font-style:normal;font-weight:600;color:var(--gold)}
+.q-ui{display:flex;align-items:center;gap:12px;margin-top:32px}
+.q-ui button{width:54px;height:54px;border-radius:50%;border:1.5px solid var(--line-d);background:transparent;color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .3s,color .3s}
+.q-ui button:hover{background:#fff;color:var(--ink)}
+.q-ui svg{width:20px;height:20px}
+.q-bar{flex:1;height:2px;background:var(--line-d);border-radius:2px;overflow:hidden;max-width:240px}
+.q-bar i{display:block;height:100%;background:var(--gold);transform:scaleX(0);transform-origin:left}
+.q-bar i.run{animation:fill 8s linear forwards}
+.q-count{font-family:var(--display);color:var(--muted-d);min-width:56px}
+
+/* Team */
+.team-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:48px}
+.member{text-decoration:none}
+.member .ph{aspect-ratio:3/4;border-radius:16px;overflow:hidden;background:#ddd;margin-bottom:14px}
+.member .ph img{width:100%;height:100%;object-fit:cover;object-position:center top;filter:grayscale(1);transition:filter .6s,transform .9s var(--ease)}
+.member:hover .ph img{filter:none;transform:scale(1.05)}
+.member h3{font-size:1.15rem;margin:0 0 2px;font-weight:600}
+.member span{color:var(--muted);font-size:.95rem}
+
+/* News */
+.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px}
+.post{display:flex;flex-direction:column;background:#fff;border-radius:var(--radius);overflow:hidden;text-decoration:none;border:1px solid var(--line);transition:transform .5s var(--ease),box-shadow .5s}
+.post:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(0,0,0,.35)}
+.post .ph{aspect-ratio:16/10;overflow:hidden;background:#eee}
+.post .ph img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.post:hover .ph img{transform:scale(1.06)}
+.post .bd{padding:24px}
+.post time{font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink)}
+.post h3{font-size:1.3rem;margin:10px 0 10px}
+.post p{color:var(--muted);font-size:1rem;margin:0}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px)}
+.big-phone{display:inline-block;font-family:var(--display);font-size:clamp(2.4rem,6vw,4.6rem);font-weight:800;letter-spacing:-.04em;color:#fff;text-decoration:none;line-height:1;margin:6px 0 18px;background:linear-gradient(90deg,var(--gold),var(--gold)) 0 100%/0 3px no-repeat;transition:background-size .5s var(--ease)}
+.big-phone:hover{background-size:100% 3px}
+.contact-card{border:1px solid var(--line-d);border-radius:var(--radius);padding:28px;margin-bottom:18px}
+.contact-card h3{font-size:1.2rem;margin-bottom:10px}
+.contact-card address{font-style:normal;color:#e4e4e4}
+.contact-card p{color:var(--muted-d);font-size:1rem}
+.mail-list{list-style:none;margin:0;padding:0}
+.mail-list li{border-bottom:1px solid var(--line-d)}
+.mail-list a{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;align-items:center;min-height:64px;padding:12px 0;text-decoration:none;transition:padding .4s var(--ease),color .3s}
+.mail-list a:hover{padding-left:10px;color:var(--gold)}
+.mail-list small{color:var(--muted-d);font-size:.95rem}
+.mail-list b{font-weight:600;overflow-wrap:anywhere}
+.pin{position:relative;width:64px;height:64px;margin-bottom:20px}
+.pin svg{width:64px;height:64px;color:var(--gold);position:relative;z-index:1;animation:bob 2.6s ease-in-out infinite}
+.pin::before,.pin::after{content:"";position:absolute;left:50%;bottom:2px;width:40px;height:12px;margin-left:-20px;border-radius:50%;border:1.5px solid var(--gold);animation:pulse 2.6s ease-out infinite}
+.pin::after{animation-delay:1.3s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulse{from{transform:scale(.4);opacity:.9}to{transform:scale(2.2);opacity:0}}
+.listings{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.listings a{display:inline-flex;align-items:center;min-height:46px;padding:0 18px;border-radius:999px;border:1.5px solid var(--line-d);text-decoration:none;font-weight:600;font-size:.98rem}
+.listings a:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Footer */
+.site-footer{background:#000;color:var(--muted-d);padding:56px 0 32px;font-size:.98rem}
+.foot{display:flex;flex-wrap:wrap;gap:24px 48px;align-items:center;justify-content:space-between}
+.foot img{height:64px;width:auto}
+.foot nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 8px}
+.foot nav a{display:inline-flex;min-height:44px;align-items:center;padding:0 10px;color:#fff;text-decoration:none}
+.foot nav a:hover{color:var(--gold)}
+.social{display:flex;gap:10px}
+.social a{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--line-d);display:grid;place-items:center;color:#fff;transition:background .3s,color .3s}
+.social a:hover{background:#fff;color:#000}
+.social svg{width:20px;height:20px;fill:currentColor}
+.legal{border-top:1px solid var(--line-d);margin-top:36px;padding-top:24px;display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
+.legal a{color:#fff;display:inline-flex;align-items:center;min-height:44px}
+.big-phone{padding:8px 0}
+
+/* Reveal */
+.js .rv{opacity:0;transform:translateY(36px);transition:opacity 1s var(--ease),transform 1s var(--ease);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+
+@media (min-width:1000px){ .scroll-cue{display:block} }
+@media (max-width:1100px){
+  .team-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:980px){
+  .menu-btn{display:inline-flex;align-items:center}
+  .nav{position:fixed;inset:0;background:var(--ink);display:flex;align-items:center;justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;z-index:-1}
+  .nav.open{opacity:1;visibility:visible}
+  .nav ul{flex-direction:column;gap:4px}
+  .nav a{font-family:var(--display);font-size:2rem;font-weight:600;min-height:60px}
+  .nav.open li{animation:fadeUp .6s var(--ease) both;animation-delay:calc(var(--i) * .05s)}
+  .intro-grid,.about-grid,.q-wrap,.contact-grid{grid-template-columns:1fr}
+  .why-grid,.news-grid{grid-template-columns:1fr 1fr}
+  .hero-bottom{grid-template-columns:1fr}
+  .intro-media{max-width:520px}
+  .q-stage{min-height:0}
+}
+@media (max-width:640px){
+  body{font-size:1.0625rem}
+  .site-header .wrap{min-height:70px}
+  .brand img{height:44px}
+  .motion-toggle .lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .motion-toggle{padding:0}
+  .why-grid,.news-grid{grid-template-columns:1fr}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .hero-ctas .btn{flex:1 1 100%;justify-content:center}
+  .hero h1 .line:nth-child(2) .ch{-webkit-text-stroke:1.5px #fff}
+  .badge-spin{width:116px;height:116px;right:12px;bottom:-24px}
+  .badge-spin b{font-size:1.6rem}
+  .hs-track{grid-template-columns:1fr}
+  .prop{aspect-ratio:4/4.4}
+  .stats{grid-template-columns:1fr 1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .js .rv,.js .wipe,.js .wipe img{opacity:1;transform:none;clip-path:none}
+  .js .skyline path{stroke-dashoffset:0}
+  .hero h1 .ch{transform:none}
+  .hero-bottom p,.hero-ctas,.slide-ui{opacity:1}
+  .slide img{transform:none}
+  .motion-toggle{display:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<div class="progress" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-diag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></symbol>
+</svg>
+
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Willner Properties home"><img src="https://willnerproperties.com/wp-content/uploads/2025/01/WillnerLogo_V_WHITE_WP-only-1024x576.png" alt="Willner Properties" width="96" height="54"></a>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li style="--i:0"><a href="#properties">Properties</a></li>
+        <li style="--i:1"><a href="#about">About</a></li>
+        <li style="--i:2"><a href="#team">Team</a></li>
+        <li style="--i:3"><a href="#news">News</a></li>
+        <li style="--i:4"><a href="https://willnerproperties.com/acquisitions/">Acquisitions</a></li>
+        <li style="--i:5"><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="head-right">
+      <button class="motion-toggle" type="button">
+        <svg class="pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg class="play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 5v14l12-7z"/></svg>
+        <span class="lbl">Pause motion</span>
+      </button>
+      <button class="menu-btn" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- Hero -->
+<section class="hero" aria-labelledby="hero-title">
+  <div class="slides" aria-hidden="true">
+    <div class="slide on" data-cap="Exton Corporate Center · Exton, PA"><img src="https://willnerproperties.com/wp-content/uploads/2025/07/ECC-Photo-scaled-e1755874874885.jpg" alt="" fetchpriority="high"></div>
+    <div class="slide" data-cap="Courtside Square · 140 Allendale Road"><img src="https://willnerproperties.com/wp-content/uploads/2025/08/140-front-with-clean-up-jpg-scaled.jpg" alt=""></div>
+    <div class="slide" data-cap="Courtside Square · King of Prussia, PA"><img src="https://willnerproperties.com/wp-content/uploads/2025/08/20250807_153523-scaled.jpg" alt=""></div>
+    <div class="slide" data-cap="Courtside Square · 150 Allendale Road"><img src="https://willnerproperties.com/wp-content/uploads/2015/05/150-Allendale-Rd-King-Of-Prussia-PA-Park-Aerial-24-LargeHighDefinition.jpg" alt=""></div>
+  </div>
+  <div class="wrap">
+    <h1 id="hero-title" aria-label="Willner Properties"><span class="line" aria-hidden="true">Willner</span><span class="line" aria-hidden="true">Properties</span></h1>
+    <div class="hero-bottom">
+      <p>A King of Prussia, Pennsylvania based mixed use real estate development, management and leasing company that prides itself on offering exceptional retail, office and residential locations for our tenants.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold magnetic" href="#properties">View availabilities<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-line" href="tel:+16102658121"><svg aria-hidden="true"><use href="#i-phone"/></svg>(610) 265-8121</a>
+      </div>
+    </div>
+    <div class="slide-ui">
+      <div class="dots" role="group" aria-label="Hero photos"></div>
+      <span class="slide-cap" aria-live="polite"></span>
+    </div>
+  </div>
+  <span class="scroll-cue" aria-hidden="true"></span>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <ul><li>King of Prussia, PA</li><li>Retail</li><li>Springfield, PA</li><li>Office</li><li>Exton, PA</li><li>Medical</li><li>Orem, UT</li><li>Residential</li><li>Matthews, NC</li><li>Mixed Use</li></ul>
+    <ul><li>King of Prussia, PA</li><li>Retail</li><li>Springfield, PA</li><li>Office</li><li>Exton, PA</li><li>Medical</li><li>Orem, UT</li><li>Residential</li><li>Matthews, NC</li><li>Mixed Use</li></ul>
+  </div>
+</div>
+
+<!-- Availabilities -->
+<section aria-labelledby="avail-title">
+  <div class="wrap intro-grid">
+    <div class="intro-media rv">
+      <div class="wipe"><img src="https://willnerproperties.com/wp-content/uploads/2025/08/140-side-with-clean-up-JPG-scaled.jpg" alt="Courtside Square building at 140 Allendale Road, King of Prussia" loading="lazy"></div>
+      <div class="badge-spin" aria-hidden="true">
+        <svg viewBox="0 0 150 150"><defs><path id="circ" d="M75 75 m-58 0 a58 58 0 1 1 116 0 a58 58 0 1 1 -116 0"/></defs><text><textPath href="#circ">Integrity · Vision · Entrepreneurship ·</textPath></text></svg>
+        <b>40+<small>YEARS</small></b>
+      </div>
+    </div>
+    <div>
+      <p class="kicker rv">Availabilities</p>
+      <h2 id="avail-title" class="rv">Space solutions, made for you.</h2>
+      <p class="lede rv">Whether you’re looking for retail, office, medical or your next apartment space, we can help! Competitive rates and NNNs, fit-out negotiations, and design assistance are available.</p>
+      <div class="rv" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:8px">
+        <a class="btn btn-ink" href="https://willnerproperties.com/commercial/">See commercial space<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn" style="border-color:var(--ink)" href="https://willnerproperties.com/residential/">Find an apartment</a>
+      </div>
+      <div class="stats">
+        <div class="stat rv"><b data-count="40" data-suffix="+">40+</b><span>Years in real estate</span></div>
+        <div class="stat rv" style="--d:.08s"><b data-count="9">9</b><span>Commercial properties</span></div>
+        <div class="stat rv" style="--d:.16s"><b data-count="3">3</b><span>States: PA, UT &amp; NC</span></div>
+        <div class="stat rv" style="--d:.24s"><b data-count="1">1</b><span>Residential community</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why us -->
+<section class="dark why" aria-labelledby="why-title">
+  <svg class="skyline" viewBox="0 0 1440 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+    <path d="M0 259 H80 V170 H150 V120 H170 V100 H190 V120 H210 V259 H250 V150 H330 V259 H360 V80 H380 V60 H440 V80 H460 V259 H500 V190 H560 V140 H620 V259 H660 V110 H740 V259 H770 V40 H790 V20 H830 V40 H850 V259 H890 V160 H960 V130 H1010 V259 H1040 V90 H1120 V259 H1150 V180 H1220 V120 H1240 V100 H1260 V120 H1280 V259 H1320 V150 H1380 V259 H1440"/>
+    <path d="M375 100 H445 M375 130 H445 M375 160 H445 M375 190 H445 M375 220 H445 M785 60 H835 M785 90 H835 M785 120 H835 M785 150 H835 M785 180 H835 M785 210 H835 M1055 120 H1105 M1055 150 H1105 M1055 180 H1105 M1055 210 H1105"/>
+  </svg>
+  <div class="wrap">
+    <p class="kicker rv">Why us?</p>
+    <h2 id="why-title" class="rv">The heart of King of Prussia.</h2>
+    <div class="why-grid">
+      <article class="why-card rv">
+        <span class="num">01</span>
+        <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 44s14-12.5 14-24a14 14 0 0 0-28 0c0 11.5 14 24 14 24z"/><circle cx="24" cy="20" r="5"/></svg>
+        <h3>Location</h3>
+        <p>Situated at the downtown center of King of Prussia’s thriving commercial hub, our properties offer the best in mixed-use retail, office and residential space, with high visibility, heavy foot traffic and proximity to premier shopping, dining and major highways.</p>
+      </article>
+      <article class="why-card rv" style="--d:.1s">
+        <span class="num">02</span>
+        <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40 18 8M42 40 30 8M24 10v6M24 22v6M24 34v6"/></svg>
+        <h3>Access</h3>
+        <p>Strategically located with unparalleled access to major highways and public transit in King of Prussia, our properties offer unmatched convenience for residents, clients and commuters alike.</p>
+      </article>
+      <article class="why-card rv" style="--d:.2s">
+        <span class="num">03</span>
+        <svg class="ic" viewBox="0 0 48 48" aria-hidden="true"><path d="m24 5 5.6 11.4 12.6 1.8-9.1 8.9 2.1 12.5L24 33.7l-11.2 5.9 2.1-12.5-9.1-8.9 12.6-1.8z"/></svg>
+        <h3>Quality</h3>
+        <p>We are constantly evolving to meet the highest standards. From durable construction to up-to-the-minute marketing updates, we are committed to delivering excellence in everything we do.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Properties -->
+<section class="props" id="properties" aria-labelledby="props-title">
+  <div class="wrap props-head">
+    <div>
+      <p class="kicker rv">Our portfolio</p>
+      <h2 id="props-title" class="rv" style="margin:0">Explore our properties</h2>
+    </div>
+    <div class="filters rv" role="group" aria-label="Filter properties">
+      <button type="button" aria-pressed="true" data-f="all">All</button>
+      <button type="button" aria-pressed="false" data-f="kop">King of Prussia</button>
+      <button type="button" aria-pressed="false" data-f="pa">Other PA</button>
+      <button type="button" aria-pressed="false" data-f="out">Out of state</button>
+      <button type="button" aria-pressed="false" data-f="res">Residential</button>
+    </div>
+  </div>
+  <div class="hscroll">
+    <div class="hs-sticky">
+      <div class="hs-track">
+        <a class="prop" data-g="kop res" href="https://willnerproperties.com/residental-sub-page-2/">
+          <img src="https://willnerproperties.com/wp-content/uploads/2025/03/c34eaa20c7be3370cea36157d3dd7baa.webp" alt="" loading="lazy">
+          <span class="go" aria-hidden="true"><svg><use href="#i-diag"/></svg></span>
+          <div class="meta"><span class="tag res">Residential</span><h3>The Courtside Square Apartments &amp; Suites</h3><address>570 W DeKalb Pike, King of Prussia, PA 19406</address></div>
+        </a>
+        <a class="prop" data-g="kop" href="https://willnerproperties.com/commercial-sub-page-1/">
+          <img src="https://willnerproperties.com/wp-content/uploads/2015/05/150-Allendale-Rd-King-Of-Prussia-PA-Park-Aerial-24-LargeHighDefinition-1024x683.jpg" alt="" loading="lazy">
+          <span class="go" aria-hidden="true"><svg><use href="#i-diag"/></svg></span>
+          <div class="meta"><span class="tag">Commercial</span><h3>Courtside Square</h3><address>150 Allendale Road, King of Prussia, PA 19406</address></div>
+        </a>
+        <a class="prop" data-g="kop" href="https://willnerproperties.com/courtside-square-140-allendale-road-king-of-prussia-pa-19406/">
+          <img src="https://willnerproperties.com/wp-content/uploads/2025/08/140-side-with-clean-up-JPG-1024x754.jpg" alt="" loading="lazy">
+          <span class="go" aria-hidden="true"><svg><use href="#i-diag"/></svg></span>
+          <div class="meta"><span class="tag">Commercial</span><h3>Courtside Square</h3><address>140 Allendale Road, King of Prussia, PA 19406</address></div>
+        </a>
+        <a class="prop" data-g="kop" href="https://willnerproperties.com/courtside-square-600-w-dekalb-pike-king-of-prussia-pa-19406-2/">
+          <img src="https://willnerproperties.com/wp-content/uploads/2025/08/20250807_152528-1024x768.jpg" alt="" loading="lazy">
+          <span class="go" aria-hidden="true"><svg><use href="#i-diag"/></svg></span>
+          <div class="meta"><span class="tag">Commercial</span><h3>Courtside Square</h3><address>600 W DeKalb Pike, King of Prussia, PA 19406</address></div>
+        </a>
+        <a class="prop" data-g="kop" href="https://willnerproperties.com/courtside-square-600-w-dekalb-pike-king-of-prussia-pa-19406/">
+          <img src="https://willnerproperties.com/wp-content/uploads/2025/03/Frame-526-7.png" alt="" loading="lazy">
+          <span class="go" aria-hidden="true"><svg><use href="#i-diag"/></svg></span>
+          <div class="meta"><span class="tag">Commercial</span><h3>Courtside Square</h3><address>590 W DeKalb Pike, King of Prussia, PA 19406</address></div>
+        </a>
+        <a class="prop" data-g="pa" href="https://willnerproperties.com/springfieled-plaza-905-w-sproul-road-springfield-pa-19064/">
+          <img src="https://willnerproperties.com/wp-content/uploads/2025/08/sp-2.png" alt="" loading="lazy">
+          <span class="go" aria-hidden="true"><svg><use href="#i-diag"/></svg></span>
+          <div class="meta"><span class="tag">Commercial</span><h3>Springfield Plaza</h3><address>905 W Sproul Road, Springfield, PA 19064</address></div>
+        </a>
+        <a class="prop" data-g="pa" href="https://willnerproperties.com/?page_id=159">
+          <img src="https://willnerproperties.com/wp-content/uploads/2025/07/ecc-outside-1024x602.png" alt="" loading="lazy">
+          <span class="go" aria-hidden="true"><svg><use href="#i-diag"/></svg></span>
+          <div class="meta"><span class="tag">Commercial</span><h3>Exton Corporate Center</h3><address>102 Pickering Way, Exton, PA 19341</address></div>
+        </a>
+        <a class="prop" data-g="pa" href="https://willnerproperties.com/exton-center-731-741-n-pottstown-pike-exton-pa-19341/">
+          <img src="https://willnerproperties.com/wp-content/uploads/2025/03/Frame-526-13.png" alt="" loading="lazy">
+          <span class="go" aria-hidden="true"><svg><use href="#i-diag"/></svg></span>
+          <div class="meta"><span class="tag">Commercial</span><h3>Exton</h3><address>731–741 North Pottstown Pike, Exton, PA 19341</address></div>
+        </a>
+        <a class="prop" data-g="out" href="https://willnerproperties.com/utah-strip-55-w-800-n-orem-utah-84057/">
+          <img src="https://willnerproperties.com/wp-content/uploads/2025/08/Screenshot-2025-07-08-155432-1024x468.png" alt="" loading="lazy">
+          <span class="go" aria-hidden="true"><svg><use href="#i-diag"/></svg></span>
+          <div class="meta"><span class="tag">Commercial</span><h3>Utah Strip</h3><address>55 W-800 N, Orem, Utah 84057</address></div>
+        </a>
+        <a class="prop" data-g="out" href="https://willnerproperties.com/cvs-nc-1305-matthews-township-parkway-matthews-nc-28105/">
+          <img src="https://willnerproperties.com/wp-content/uploads/2025/08/IMG_2709-1024x768.jpg" alt="" loading="lazy">
+          <span class="go" aria-hidden="true"><svg><use href="#i-diag"/></svg></span>
+          <div class="meta"><span class="tag">Commercial</span><h3>CVS</h3><address>Matthews Township Parkway, Matthews, NC 28105</address></div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about" aria-labelledby="about-title">
+  <div class="wrap about-grid">
+    <div>
+      <p class="kicker rv">Company overview</p>
+      <h2 id="about-title" class="rv">Over 40 years of building in Pennsylvania.</h2>
+      <p class="lede rv">Willner Properties is a diversified real estate development, leasing and management company based in King of Prussia, PA. With multiple mixed use commercial, retail, and residential buildings in Pennsylvania, we may be the perfect fit for your next move!</p>
+      <div class="values rv"><span>Integrity</span><span>Vision</span><span>Entrepreneurship</span></div>
+      <ul class="checks rv">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Competitive rates and NNNs</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Fit-out negotiations</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Design assistance available</li>
+      </ul>
+      <a class="btn btn-ink rv" href="https://willnerproperties.com/about-us/">More about us<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <aside class="about-quote rv" style="--d:.15s">
+      <span class="glow" aria-hidden="true"></span>
+      <p class="kicker">Commitment to local prosperity</p>
+      <h3>Real estate is more than just properties.</h3>
+      <p>It’s about fostering connections, supporting local economies, and enhancing the neighborhoods we serve. By reinvesting in the markets where we operate, we contribute to long-term growth and sustainability.</p>
+      <p style="margin:0">Through sponsorships, volunteer efforts and strategic partnerships, Willner Properties remains dedicated to uplifting the communities that have supported us for over 40 years.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="dark quotes" aria-labelledby="q-title">
+  <div class="wrap q-wrap">
+    <div>
+      <p class="kicker rv">Hear from our communities</p>
+      <h2 id="q-title" class="rv">Don’t take our word for it.</h2>
+      <p class="lede rv">We take great pride in creating exceptional spaces and providing top-notch service. Hear directly from our tenants and partners.</p>
+    </div>
+    <div class="rv">
+      <div class="q-stage" aria-live="polite">
+        <figure class="q on"><blockquote>Living at Courtside Square has been a fantastic experience! The maintenance team deserves a special shoutout for their amazing response time… I highly recommend Courtside Square for anyone looking for a well-maintained, hassle-free living experience!</blockquote><cite>Courtside Square resident</cite></figure>
+        <figure class="q"><blockquote>Throughout the negotiation process, they were friendly, professional, and transparent… I hope to work with Willner Properties again in the future and would recommend them to anyone looking for a top-notch commercial real estate partner.</blockquote><cite>Marcy, Broker</cite></figure>
+        <figure class="q"><blockquote>From start to finish, their team demonstrated the highest level of professionalism, expertise, and attention to detail… We’re looking forward to continuing our partnership as our business grows!</blockquote><cite>Sean, Franchisee</cite></figure>
+        <figure class="q"><blockquote>The team demonstrated the ability to pivot as circumstances and requirements changed, ensuring that our needs were always met… a commercial real estate partner who can navigate change with ease and deliver exceptional results.</blockquote><cite>Spense, Broker</cite></figure>
+      </div>
+      <div class="q-ui">
+        <button type="button" class="q-prev" aria-label="Previous review"><svg aria-hidden="true"><use href="#i-left"/></svg></button>
+        <button type="button" class="q-next" aria-label="Next review"><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        <span class="q-count">01 / 04</span>
+        <span class="q-bar" aria-hidden="true"><i></i></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section id="team" aria-labelledby="team-title">
+  <div class="wrap">
+    <p class="kicker rv">The Willner team</p>
+    <h2 id="team-title" class="rv">We really work as a family.</h2>
+    <p class="lede rv">We all strive to provide the best service possible, from the top down.</p>
+    <div class="team-grid">
+      <a class="member rv" href="https://willnerproperties.com/team/"><div class="ph wipe"><img src="https://willnerproperties.com/wp-content/uploads/2025/03/Frame-526.png" alt="" loading="lazy"></div><h3>Michael J. Willner</h3><span>CEO &amp; President</span></a>
+      <a class="member rv" style="--d:.06s" href="https://willnerproperties.com/team/"><div class="ph wipe"><img src="https://willnerproperties.com/wp-content/uploads/2025/03/Chuck-Lojewski.jpg" alt="" loading="lazy"></div><h3>Chuck Lojewski</h3><span>Controller</span></a>
+      <a class="member rv" style="--d:.12s" href="https://willnerproperties.com/team/"><div class="ph wipe"><img src="https://willnerproperties.com/wp-content/uploads/2026/09/b2d2eed1-81ad-4a21-b308-b3a2b0dd6e65-853x1024.png" alt="" loading="lazy"></div><h3>Paula Macrina</h3><span>Property Operations Coordinator</span></a>
+      <a class="member rv" style="--d:.18s" href="https://willnerproperties.com/team/"><div class="ph wipe"><img src="https://willnerproperties.com/wp-content/uploads/2026/10/ariel-bio-868x1024.jpg" alt="" loading="lazy"></div><h3>Ariel Weaver</h3><span>Leasing Consultant</span></a>
+      <a class="member rv" style="--d:.24s" href="https://willnerproperties.com/team/"><div class="ph wipe"><img src="https://willnerproperties.com/wp-content/uploads/2026/04/73f2854f-ad40-41f7-8e08-820d0e616e3f.jpg" alt="" loading="lazy"></div><h3>Sinjo Jiju</h3><span>Intern</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- News -->
+<section id="news" aria-labelledby="news-title" style="padding-top:0">
+  <div class="wrap">
+    <div class="props-head" style="margin-bottom:0">
+      <div>
+        <p class="kicker rv">News</p>
+        <h2 id="news-title" class="rv" style="margin:0">What’s happening in the area</h2>
+      </div>
+      <a class="btn btn-ink rv" href="https://willnerproperties.com/news/">All news<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="news-grid">
+      <a class="post rv" href="https://willnerproperties.com/trinity-health-mid-atlantic-opens-new-practice-at-springfield-plaza/"><div class="ph"><img src="https://willnerproperties.com/wp-content/uploads/2026/08/trinity-health.org_.png" alt="" loading="lazy"></div><div class="bd"><time datetime="2026-08-19">August 19, 2026</time><h3>Trinity Health Mid-Atlantic Opens New Practice at Springfield Plaza</h3><p>Trinity Health Mid-Atlantic Medical Group has opened a new medical practice at Springfield Plaza, leasing approximately 5,000 square feet.</p></div></a>
+      <a class="post rv" style="--d:.08s" href="https://willnerproperties.com/mission-pet-health-signs-lease-at-willner-properties-king-of-prussia-location/"><div class="ph"><img src="https://willnerproperties.com/wp-content/uploads/2026/07/pet-medic-image.jpg" alt="" loading="lazy"></div><div class="bd"><time datetime="2026-07-13">July 13, 2026</time><h3>Mission Pet Health Signs Lease at Our King of Prussia Location</h3><p>Mission Pet Health has signed a lease for approximately 3,100 square feet at 600 W. DeKalb Pike.</p></div></a>
+      <a class="post rv" style="--d:.16s" href="https://willnerproperties.com/wonder-opens-at-600-w-dekalb-pike/"><div class="ph"><img src="https://willnerproperties.com/wp-content/uploads/2024/12/wonder1.png" alt="" loading="lazy"></div><div class="bd"><time datetime="2025-05-02">May 2, 2025</time><h3>Wonder Opens at 600 W DeKalb Pike in King of Prussia!</h3><p>Welcoming Wonder’s innovative fast fine dining concept to the heart of King of Prussia.</p></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="dark" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div>
+      <p class="kicker rv">Contact us</p>
+      <h2 id="contact-title" class="rv">Looking for an apartment, storefront, or office space?</h2>
+      <p class="lede rv">Call us to talk to us directly anytime. If we miss your call, leave a message and we will get back to you as soon as possible.</p>
+      <a class="big-phone rv" href="tel:+16102658121">(610) 265-8121</a>
+      <div class="contact-card rv">
+        <div class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <h3>Visit our on-site office</h3>
+        <address>150 Allendale Road, Suite 303<br>King of Prussia, PA 19406</address>
+        <p style="margin-top:12px">Visit anytime during business hours. Look for the double doors under the clock tower, take the elevator to the top floor, hang left and left again, and you’ll see our offices on the left!</p>
+        <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&amp;query=150+Allendale+Road+King+of+Prussia+PA+19406">Open in Google Maps<svg aria-hidden="true"><use href="#i-diag"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <ul class="mail-list rv">
+        <li><a href="mailto:Apartments@willnerproperties.com"><small>Looking for an apartment?</small><b>Apartments@willnerproperties.com</b></a></li>
+        <li><a href="mailto:Commercial@willnerproperties.com"><small>Looking for a commercial space?</small><b>Commercial@willnerproperties.com</b></a></li>
+        <li><a href="mailto:Maintenance@willnerproperties.com"><small>Reporting a maintenance issue?</small><b>Maintenance@willnerproperties.com</b></a></li>
+        <li><a href="mailto:Administration@willnerproperties.com"><small>Any other questions?</small><b>Administration@willnerproperties.com</b></a></li>
+      </ul>
+      <div class="rv" style="margin-top:36px">
+        <h3>Find us on</h3>
+        <div class="listings">
+          <a href="https://www.rent.com/pennsylvania/king-of-prussia-apartments/courtside-square-apartments-and-suites-4-100020417">Rent.com</a>
+          <a href="https://www.zillow.com/apartments/king-of-prussia-pa/courtside-square-apartments-and-suites/5XjPs5/">Zillow</a>
+          <a href="https://www.loopnet.com/Listing/150-Allendale-Rd-King-Of-Prussia-PA/14240855/">LoopNet</a>
+        </div>
+      </div>
+      <div class="rv" style="margin-top:36px">
+        <h3>Leasing &amp; sales</h3>
+        <p style="color:var(--muted-d)">Looking to rent, lease or sell commercial space? Let us know, we can help!</p>
+        <a class="btn btn-line" href="https://willnerproperties.com/acquisitions/">Connect about acquisitions<svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot">
+      <img src="https://willnerproperties.com/wp-content/uploads/2025/03/WillnerLogo_V_WHITE-1024x576.png" alt="Willner Properties" width="114" height="64" loading="lazy">
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="https://willnerproperties.com/about-us/">About Us</a></li>
+          <li><a href="https://willnerproperties.com/team/">The Willner Team</a></li>
+          <li><a href="https://willnerproperties.com/residential/">Residential</a></li>
+          <li><a href="https://willnerproperties.com/commercial/">Commercial</a></li>
+          <li><a href="https://willnerproperties.com/acquisitions/">Acquisitions</a></li>
+          <li><a href="https://willnerproperties.com/news/">News</a></li>
+          <li><a href="https://willnerproperties.com/contact-us/">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="social">
+        <a href="https://www.facebook.com/willnerprop/" aria-label="Willner Properties on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8V6.5c0-.8.2-1.5 1.5-1.5H17V2h-2.6C11.5 2 10.5 3.9 10.5 6.3V8H8v3h2.5v11H14V11h2.6l.4-3z"/></svg></a>
+        <a href="https://www.linkedin.com/company/willner-properties/" aria-label="Willner Properties on LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.2c0-1.2 0-2.9-1.8-2.9s-2 1.4-2 2.8V21h-4z"/></svg></a>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© Willner Properties · 150 Allendale Road, Suite 303, King of Prussia, PA 19406</span>
+      <a href="https://willnerproperties.com/privacy-policy-2/">Privacy Policy / Accessibility Statement</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var paused=function(){ return root.classList.contains('paused'); };
+
+  // Split hero title into letters for the staggered rise
+  var i=0;
+  document.querySelectorAll('.hero h1 .line').forEach(function(line){
+    var t=line.textContent; line.textContent='';
+    t.split('').forEach(function(c){ var s=document.createElement('span'); s.className='ch'; s.style.setProperty('--i',i++); s.textContent=c; line.appendChild(s); });
+  });
+
+  // Pause / play every looping animation
+  var mt=document.querySelector('.motion-toggle');
+  function setPaused(p){
+    root.classList.toggle('paused',p);
+    mt.querySelector('.lbl').textContent=p?'Play motion':'Pause motion';
+    try{ localStorage.setItem('wp-motion',p?'off':'on'); }catch(e){}
+    if(!p){ restartSlides(); restartQuotes(); }
+  }
+  mt.addEventListener('click',function(){ setPaused(!paused()); });
+
+  // Scroll reveals
+  if('IntersectionObserver' in window && !reduce){
+    root.classList.add('js');
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); e.target.querySelectorAll('.wipe').forEach(function(w){ w.classList.add('in'); }); io.unobserve(e.target); } });
+    },{rootMargin:'0px 0px -10% 0px',threshold:.1});
+    document.querySelectorAll('.rv,.skyline').forEach(function(el){
+      if(el.getBoundingClientRect().top<innerHeight*.9 && !el.classList.contains('skyline')) setTimeout(function(){ el.classList.add('in'); el.querySelectorAll('.wipe').forEach(function(w){ w.classList.add('in'); }); },60);
+      else io.observe(el);
+    });
+    // skyline line-drawing lengths
+    document.querySelectorAll('.skyline path').forEach(function(p){ p.style.setProperty('--len',Math.ceil(p.getTotalLength())); });
+  }
+
+  // Hero slideshow
+  var slides=[].slice.call(document.querySelectorAll('.slide')), dots=document.querySelector('.dots'), cap=document.querySelector('.slide-cap'), cur=0, sTimer=null;
+  slides.forEach(function(s,n){
+    var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Show photo '+(n+1)+': '+s.dataset.cap); b.innerHTML='<span></span>';
+    b.addEventListener('click',function(){ show(n); });
+    dots.appendChild(b);
+  });
+  function show(n){
+    slides[cur].classList.remove('on'); cur=n; slides[cur].classList.add('on');
+    [].forEach.call(dots.children,function(d,k){ d.setAttribute('aria-current',k===cur?'true':'false'); });
+    cap.textContent=slides[cur].dataset.cap;
+    restartSlides();
+  }
+  function restartSlides(){ clearTimeout(sTimer); if(!reduce && !paused()) sTimer=setTimeout(function(){ show((cur+1)%slides.length); },6000); }
+  show(0);
+
+  // Header: solid after hero starts, hides on scroll down
+  var header=document.querySelector('.site-header'), lastY=0;
+  var bar=document.querySelector('.progress');
+
+  // Pinned horizontal property scroll (desktop only)
+  var hs=document.querySelector('.hscroll'), track=document.querySelector('.hs-track');
+  var wide=window.matchMedia('(min-width: 900px)');
+  function hsSetup(){
+    var on=wide.matches && !reduce;
+    hs.classList.toggle('hs-on',on);
+    if(on){ hs.style.height=(track.scrollWidth-innerWidth+innerHeight)+'px'; }
+    else { hs.style.height=''; track.style.transform=''; }
+    frame();
+  }
+
+  var ticking=false;
+  function frame(){
+    ticking=false;
+    var y=scrollY, max=document.documentElement.scrollHeight-innerHeight;
+    bar.style.transform='scaleX('+(max>0?Math.min(1,y/max):0)+')';
+    header.classList.toggle('solid',y>40);
+    header.classList.toggle('hide',y>lastY && y>innerHeight && !document.querySelector('.nav.open'));
+    lastY=y;
+    if(hs.classList.contains('hs-on')){
+      var r=hs.getBoundingClientRect(), dist=hs.offsetHeight-innerHeight;
+      var p=Math.min(1,Math.max(0,-r.top/dist));
+      track.style.transform='translate3d('+(-p*(track.scrollWidth-innerWidth))+'px,0,0)';
+    }
+  }
+  function queue(){ if(!ticking){ ticking=true; requestAnimationFrame(frame); } }
+  addEventListener('scroll',queue,{passive:true});
+  addEventListener('resize',hsSetup);
+  addEventListener('load',hsSetup);
+  hsSetup();
+
+  // Property filters
+  var fbtns=[].slice.call(document.querySelectorAll('.filters button'));
+  fbtns.forEach(function(b){
+    b.addEventListener('click',function(){
+      fbtns.forEach(function(x){ x.setAttribute('aria-pressed',x===b?'true':'false'); });
+      document.querySelectorAll('.prop').forEach(function(p){ p.hidden=!(b.dataset.f==='all' || p.dataset.g.split(' ').indexOf(b.dataset.f)>-1); });
+      hsSetup();
+    });
+  });
+
+  // 3D tilt on property cards and spotlight on why-cards (fine pointers only)
+  if(!reduce && window.matchMedia('(pointer:fine)').matches){
+    document.querySelectorAll('.prop').forEach(function(c){
+      c.addEventListener('pointermove',function(e){
+        if(paused()) return;
+        var r=c.getBoundingClientRect(), x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+        c.classList.add('tilting'); c.style.setProperty('--ry',(x*10)+'deg'); c.style.setProperty('--rx',(-y*10)+'deg');
+      });
+      c.addEventListener('pointerleave',function(){ c.classList.remove('tilting'); c.style.setProperty('--ry','0deg'); c.style.setProperty('--rx','0deg'); });
+    });
+    document.querySelectorAll('.why-card').forEach(function(c){
+      c.addEventListener('pointermove',function(e){ var r=c.getBoundingClientRect(); c.style.setProperty('--mx',(e.clientX-r.left)+'px'); c.style.setProperty('--my',(e.clientY-r.top)+'px'); });
+    });
+    // magnetic primary button
+    document.querySelectorAll('.magnetic').forEach(function(b){
+      b.addEventListener('pointermove',function(e){ if(paused()) return; var r=b.getBoundingClientRect(); b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.2)+'px,'+((e.clientY-r.top-r.height/2)*.3)+'px)'; });
+      b.addEventListener('pointerleave',function(){ b.style.transform=''; });
+    });
+  }
+
+  // Count-up stats
+  if(!reduce && 'IntersectionObserver' in window){
+    var cio=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(!e.isIntersecting) return; cio.unobserve(e.target);
+        var el=e.target, to=+el.dataset.count, suf=el.dataset.suffix||'', t0=performance.now();
+        (function step(now){ var p=Math.min(1,(now-t0)/1500), k=1-Math.pow(1-p,3); el.textContent=Math.round(to*k)+suf; if(p<1) requestAnimationFrame(step); })(t0);
+      });
+    },{threshold:.6});
+    document.querySelectorAll('[data-count]').forEach(function(el){ el.textContent='0'+(el.dataset.suffix||''); cio.observe(el); });
+  }
+
+  // Testimonials carousel
+  var qs=[].slice.call(document.querySelectorAll('.q')), qi=0, qTimer=null, qbar=document.querySelector('.q-bar i'), qc=document.querySelector('.q-count'), stage=document.querySelector('.q-stage'), hold=false;
+  function qShow(n){
+    qs[qi].classList.remove('on'); qi=(n+qs.length)%qs.length; qs[qi].classList.add('on');
+    qc.textContent=('0'+(qi+1)).slice(-2)+' / '+('0'+qs.length).slice(-2);
+    restartQuotes();
+  }
+  function restartQuotes(){
+    clearTimeout(qTimer); qbar.classList.remove('run'); void qbar.offsetWidth;
+    if(reduce || paused() || hold) return;
+    qbar.classList.add('run'); qTimer=setTimeout(function(){ qShow(qi+1); },8000);
+  }
+  document.querySelector('.q-prev').addEventListener('click',function(){ qShow(qi-1); });
+  document.querySelector('.q-next').addEventListener('click',function(){ qShow(qi+1); });
+  var qbox=stage.parentElement;
+  qbox.addEventListener('mouseenter',function(){ hold=true; restartQuotes(); });
+  qbox.addEventListener('mouseleave',function(){ hold=false; restartQuotes(); });
+  qbox.addEventListener('focusin',function(){ hold=true; restartQuotes(); });
+  qbox.addEventListener('focusout',function(){ hold=false; restartQuotes(); });
+  restartQuotes();
+
+  try{ if(localStorage.getItem('wp-motion')==='off') setPaused(true); }catch(e){}
+
+  // Mobile menu
+  var mb=document.querySelector('.menu-btn'), nav=document.getElementById('site-nav');
+  function setMenu(o){ mb.setAttribute('aria-expanded',o); mb.textContent=o?'Close':'Menu'; nav.classList.toggle('open',o); header.classList.toggle('menu-open',o); document.body.style.overflow=o?'hidden':''; }
+  mb.addEventListener('click',function(){ setMenu(mb.getAttribute('aria-expanded')!=='true'); });
+  nav.addEventListener('click',function(e){ if(e.target.closest('a')) setMenu(false); });
+  addEventListener('keydown',function(e){ if(e.key==='Escape' && nav.classList.contains('open')){ setMenu(false); mb.focus(); } });
+})();
+</script>
+</body>
+</html>
